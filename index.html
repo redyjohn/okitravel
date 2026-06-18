@@ -20,6 +20,14 @@
     <button data-panel="panel-notices">📋 注意事項</button>
   </nav>
 
+  <div class="day-tabs-bar visible" id="day-tabs-bar">
+    <div id="day-tabs-sentinel" class="day-tabs-sentinel" aria-hidden="true"></div>
+    <div class="day-tabs-placeholder" id="day-tabs-placeholder"></div>
+    <div class="day-tabs-sticky" id="day-tabs-sticky">
+      <div id="day-tabs" class="day-tabs" role="tablist" aria-label="選擇日期"></div>
+    </div>
+  </div>
+
   <main>
     <section id="panel-itinerary" class="panel active" aria-label="每日行程">
       <div class="quick-links">
@@ -27,7 +35,6 @@
         <a class="btn-link btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%82%A3%E9%9C%B8%E6%A9%9F%E5%A0%B4" target="_blank" rel="noopener">📍 那霸機場</a>
         <a class="btn-link btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=5201314%20Okinawa%20Rental%20Car" target="_blank" rel="noopener">🚗 租車公司</a>
       </div>
-      <div id="day-tabs" class="day-tabs" role="tablist" aria-label="選擇日期"></div>
       <div id="itinerary-content"></div>
     </section>
 

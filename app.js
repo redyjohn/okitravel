@@ -99,6 +99,55 @@ function renderEvent(ev) {
   </article>`;
 }
 
+function updateNavOffset() {
+  const nav = document.querySelector(".main-nav");
+  if (nav) {
+    document.documentElement.style.setProperty("--nav-bottom", `${nav.offsetHeight}px`);
+  }
+}
+
+function setupDayTabsPin() {
+  const barWrap = document.getElementById("day-tabs-bar");
+  const bar = document.getElementById("day-tabs-sticky");
+  const sentinel = document.getElementById("day-tabs-sentinel");
+  const placeholder = document.getElementById("day-tabs-placeholder");
+  if (!barWrap || !bar || !sentinel || !placeholder) return;
+
+  const pin = () => {
+    if (!barWrap.classList.contains("visible")) {
+      bar.classList.remove("is-fixed");
+      placeholder.style.height = "0";
+      return;
+    }
+
+    updateNavOffset();
+    const navBottom = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--nav-bottom")) || 0;
+    const shouldPin = sentinel.getBoundingClientRect().top <= navBottom;
+
+    if (shouldPin) {
+      bar.classList.add("is-fixed");
+      placeholder.style.height = `${bar.offsetHeight}px`;
+    } else {
+      bar.classList.remove("is-fixed");
+      placeholder.style.height = "0";
+    }
+  };
+
+  window.addEventListener("scroll", pin, { passive: true });
+  window.addEventListener("resize", pin);
+  pin();
+}
+
+function scrollToItineraryContent() {
+  const bar = document.getElementById("day-tabs-sticky");
+  const content = document.getElementById("itinerary-content");
+  if (!bar || !content) return;
+
+  const offset = bar.offsetHeight + parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--nav-bottom")) + 8;
+  const y = content.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+}
+
 function renderDay(day) {
   return `<div class="day-header">
     <h2>${day.label}　${day.date}</h2>
@@ -127,7 +176,7 @@ function renderItinerary() {
       btn.classList.add("active");
       const day = TRIP.days.find(d => d.id === +btn.dataset.day);
       container.innerHTML = renderDay(day);
-      container.scrollIntoView({ behavior: "smooth", block: "start" });
+      scrollToItineraryContent();
     });
   });
 }
@@ -181,6 +230,7 @@ function renderNotices() {
 function setupNav() {
   const mainBtns = document.querySelectorAll(".main-nav button");
   const panels = document.querySelectorAll(".panel");
+  const dayTabsBar = document.getElementById("day-tabs-bar");
 
   mainBtns.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -188,6 +238,11 @@ function setupNav() {
       panels.forEach(p => p.classList.remove("active"));
       btn.classList.add("active");
       document.getElementById(btn.dataset.panel).classList.add("active");
+
+      if (dayTabsBar) {
+        dayTabsBar.classList.toggle("visible", btn.dataset.panel === "panel-itinerary");
+      }
+      window.dispatchEvent(new Event("scroll"));
     });
   });
 }
@@ -216,4 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderNotices();
   setupNav();
   setupLightbox();
+  updateNavOffset();
+  setupDayTabsPin();
+  window.addEventListener("resize", updateNavOffset);
 });
