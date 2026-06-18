@@ -17,7 +17,7 @@ const TRIP = {
             { label: "臺中國際機場", url: "https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E4%B8%AD%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4", type: "maps" }
           ],
           notes: [
-            { text: "Visit Japan Web（6/25 預定入境，最晚在抵達日本 6 小時以前完成登錄）", link: "https://vjw-lp.digital.go.jp/zh/" }
+            { text: "Visit Japan Web（6/25 預定入境，最晚在抵達日本 6 小時以前完成登錄）", link: "https://services.digital.go.jp/zh-cmn-hant/visit-japan-web/" }
           ]
         },
         {
@@ -104,7 +104,7 @@ const TRIP = {
           type: "insurance",
           notes: [
             { text: "保險期間：2026.06.27–30" },
-            { text: "透過 Visit Japan Web 申請", link: "https://vjw-lp.digital.go.jp/zh/" }
+            { text: "透過 Visit Japan Web 申請", link: "https://services.digital.go.jp/zh-cmn-hant/visit-japan-web/" }
           ]
         },
         {
@@ -371,7 +371,7 @@ const TRIP = {
       title: "入境（臺灣）注意事項",
       pdfPages: [22, 23, 24, 25, 26, 27],
       links: [
-        { label: "Visit Japan Web", url: "https://vjw-lp.digital.go.jp/zh/" },
+        { label: "Visit Japan Web", url: "https://services.digital.go.jp/zh-cmn-hant/visit-japan-web/" },
         { label: "臺灣入境查詢", url: "https://www.immigration.gov.tw/" }
       ]
     },
