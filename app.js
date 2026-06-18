@@ -4,9 +4,42 @@ const TYPE_LABELS = {
   attraction: "景點", insurance: "保險", rest: "休息"
 };
 
-function mapcodeUrl(code) {
-  const clean = code.replace(/\s/g, "").replace(/\*/g, "*");
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("マップコード " + clean)}`;
+// 由 PDF 內 Google Maps 短網址解析的精確座標（供導航使用）
+const MAPS_COORDS = {
+  "https://maps.app.goo.gl/95Sgb4BDBae4o4Vn6": { lat: 26.2150228, lng: 127.6874839 },
+  "https://maps.app.goo.gl/HixD7ZixjPEgsnwE7": { lat: 26.214844, lng: 127.687208 },
+  "https://maps.app.goo.gl/ZBCFQDQoHnp7HoT6A": { lat: 26.2182958, lng: 127.6945378 },
+  "https://maps.app.goo.gl/Cx9uR493wvwS1Lmc6": { lat: 26.2186763, lng: 127.6943748 },
+  "https://maps.app.goo.gl/mFfeA5753tFXZdkJ6": { lat: 26.2300311, lng: 127.6811351 },
+  "https://maps.app.goo.gl/5hdreEuP84i1BPGy5": { lat: 26.2617542, lng: 127.6981799 },
+  "https://maps.app.goo.gl/eHQHRxx5HB9JtGYL8": { lat: 26.6187557, lng: 127.9691664 },
+  "https://maps.app.goo.gl/8G2fdLW4at7kbPpr7": { lat: 26.6209963, lng: 127.9636717 },
+  "https://maps.app.goo.gl/XEEM3LXRVagsfkjA8": { lat: 26.692838, lng: 127.8793828 },
+  "https://maps.app.goo.gl/uqe7brpmCiSnFhC97": { lat: 26.6968294, lng: 128.0197784 },
+  "https://maps.app.goo.gl/SR742iQVXZkdr17R7": { lat: 26.678494, lng: 128.0125167 },
+  "https://maps.app.goo.gl/81LR7HAGxtLMf2TVA": { lat: 26.3177356, lng: 127.7596369 },
+  "https://maps.app.goo.gl/9sb43W3naQECKz2T6": { lat: 26.3162888, lng: 127.755221 },
+  "https://maps.app.goo.gl/v9mXerULzHZXFjRy7": { lat: 26.3302873, lng: 127.7456435 },
+  "https://maps.app.goo.gl/H4otdwonwrGWxVCfA": { lat: 26.2191973, lng: 127.6719382 },
+  "https://maps.app.goo.gl/KsdwiZRWksoGt8Qj9": { lat: 26.2185391, lng: 127.6726486 },
+  "https://maps.app.goo.gl/XzspLda4g3MhjovC6": { lat: 26.1910343, lng: 127.6707712 }
+};
+
+function navigateUrl(loc) {
+  if (loc.maps && MAPS_COORDS[loc.maps]) {
+    const { lat, lng } = MAPS_COORDS[loc.maps];
+    return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=driving&dir_action=navigate`;
+  }
+  if (loc.name) {
+    return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(loc.name + " 沖繩")}&travelmode=driving&dir_action=navigate`;
+  }
+  const compact = (loc.mapcode || "").replace(/\s/g, "");
+  return `https://mapcode.app/ja/?q=${encodeURIComponent(compact)}`;
+}
+
+function mapcodeLookupUrl(code) {
+  const compact = code.replace(/\s/g, "");
+  return `https://mapcode.app/ja/?q=${encodeURIComponent(compact)}`;
 }
 
 function telLink(tel) {
@@ -26,8 +59,11 @@ function renderLocation(loc) {
   const mapsBtn = loc.maps
     ? `<a class="btn-link btn-maps" href="${loc.maps}" target="_blank" rel="noopener">📍 Google Maps</a>`
     : "";
-  const navBtn = loc.mapcode
-    ? `<a class="btn-link btn-nav" href="${mapcodeUrl(loc.mapcode)}" target="_blank" rel="noopener">🚗 導航（Mapcode）</a>`
+  const navBtn = (loc.maps || loc.mapcode)
+    ? `<a class="btn-link btn-nav" href="${navigateUrl(loc)}" target="_blank" rel="noopener">🚗 開始導航</a>`
+    : "";
+  const mapcodeBtn = loc.mapcode
+    ? `<a class="btn-link btn-ext" href="${mapcodeLookupUrl(loc.mapcode)}" target="_blank" rel="noopener">🔢 Mapcode 查詢</a>`
     : "";
   const telBtn = loc.tel
     ? `<a class="btn-link btn-tel" href="${telLink(loc.tel)}">📞 ${loc.tel}</a>`
@@ -36,7 +72,7 @@ function renderLocation(loc) {
     <div class="loc-name">${loc.name}</div>
     ${loc.mapcode ? `<div class="mapcode">Mapcode: ${loc.mapcode}</div>` : ""}
     ${loc.note ? `<div class="event-hours">${loc.note}</div>` : ""}
-    <div class="link-row">${mapsBtn}${navBtn}${telBtn}</div>
+    <div class="link-row">${mapsBtn}${navBtn}${mapcodeBtn}${telBtn}</div>
   </div>`;
 }
 
