@@ -1,0 +1,219 @@
+const TYPE_LABELS = {
+  transport: "交通", flight: "航班", airport: "機場", car: "租車",
+  parking: "停車", food: "美食", hotel: "住宿", shopping: "購物",
+  attraction: "景點", insurance: "保險", rest: "休息"
+};
+
+function mapcodeUrl(code) {
+  const clean = code.replace(/\s/g, "").replace(/\*/g, "*");
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("マップコード " + clean)}`;
+}
+
+function telLink(tel) {
+  return `tel:${tel.replace(/-/g, "")}`;
+}
+
+function renderLinks(links) {
+  if (!links?.length) return "";
+  return `<div class="link-row">${links.map(l => {
+    const cls = l.type === "maps" ? "btn-maps" : "btn-ext";
+    const icon = l.type === "maps" ? "📍" : "🔗";
+    return `<a class="btn-link ${cls}" href="${l.url}" target="_blank" rel="noopener">${icon} ${l.label}</a>`;
+  }).join("")}</div>`;
+}
+
+function renderLocation(loc) {
+  const mapsBtn = loc.maps
+    ? `<a class="btn-link btn-maps" href="${loc.maps}" target="_blank" rel="noopener">📍 Google Maps</a>`
+    : "";
+  const navBtn = loc.mapcode
+    ? `<a class="btn-link btn-nav" href="${mapcodeUrl(loc.mapcode)}" target="_blank" rel="noopener">🚗 導航（Mapcode）</a>`
+    : "";
+  const telBtn = loc.tel
+    ? `<a class="btn-link btn-tel" href="${telLink(loc.tel)}">📞 ${loc.tel}</a>`
+    : "";
+  return `<div class="location-card">
+    <div class="loc-name">${loc.name}</div>
+    ${loc.mapcode ? `<div class="mapcode">Mapcode: ${loc.mapcode}</div>` : ""}
+    ${loc.note ? `<div class="event-hours">${loc.note}</div>` : ""}
+    <div class="link-row">${mapsBtn}${navBtn}${telBtn}</div>
+  </div>`;
+}
+
+function renderLocations(event) {
+  let html = "";
+  if (event.parking) html += renderLocation(event.parking);
+  if (event.locations) html += event.locations.map(renderLocation).join("");
+  return html;
+}
+
+function renderNotes(notes) {
+  if (!notes?.length) return "";
+  return `<ul class="event-notes">${notes.map(n => {
+    const text = n.link
+      ? `<a href="${n.link}" target="_blank" rel="noopener">${n.text}</a>`
+      : n.text;
+    return `<li>${text}</li>`;
+  }).join("")}</ul>`;
+}
+
+function renderRecs(items, label) {
+  if (!items?.length) return "";
+  const isObj = typeof items[0] === "object";
+  return `<div class="rec-list"><h4>${label}</h4><ul>${items.map(i => {
+    if (isObj) {
+      return `<li>${i.name}${i.hours ? ` <span style="color:var(--muted)">（${i.hours}）</span>` : ""}</li>`;
+    }
+    return `<li>${i}</li>`;
+  }).join("")}</ul></div>`;
+}
+
+function renderSchedule(schedule) {
+  if (!schedule?.length) return "";
+  return `<div class="schedule-grid">${schedule.map(s =>
+    `<div class="schedule-item"><span>${s.label}</span><strong>${s.time}</strong></div>`
+  ).join("")}</div>`;
+}
+
+function renderImages(pages) {
+  if (!pages?.length) return "";
+  return `<div class="pdf-viewer">
+    <p class="pdf-hint">以下為 PDF 原始頁面參考資料（點擊可放大）</p>
+    ${pages.map(p => `<img src="images/page-${String(p).padStart(2, "0")}.png" alt="PDF 第 ${p} 頁" loading="lazy">`).join("")}
+  </div>`;
+}
+
+function renderEvent(ev) {
+  return `<article class="event">
+    <div class="event-time">${ev.time}</div>
+    <span class="event-type">${TYPE_LABELS[ev.type] || ev.type}</span>
+    <h3 class="event-title">${ev.title}</h3>
+    ${ev.hours ? `<div class="event-hours">營業時間：${ev.hours}</div>` : ""}
+    ${renderLinks(ev.links)}
+    ${renderLocations(ev)}
+    ${renderNotes(ev.notes)}
+    ${renderRecs(ev.shops, "商家參考")}
+    ${renderRecs(ev.recommendations, "美食參考")}
+    ${renderSchedule(ev.schedule)}
+    ${renderImages(ev.imagePages)}
+  </article>`;
+}
+
+function renderDay(day) {
+  return `<div class="day-header">
+    <h2>${day.label}　${day.date}</h2>
+    <p>${day.subtitle}</p>
+    ${day.accommodation ? `<div class="stay">🏨 住宿：${day.accommodation}</div>` : ""}
+  </div>
+  <div class="timeline">${day.events.map(renderEvent).join("")}</div>`;
+}
+
+function renderItinerary() {
+  const container = document.getElementById("itinerary-content");
+  const tabs = document.getElementById("day-tabs");
+
+  tabs.innerHTML = TRIP.days.map((d, i) =>
+    `<button class="day-tab${i === 0 ? " active" : ""}" data-day="${d.id}">
+      <span class="day-num">${d.label}</span>
+      <span class="day-date">${d.date.slice(5)}</span>
+    </button>`
+  ).join("");
+
+  container.innerHTML = renderDay(TRIP.days[0]);
+
+  tabs.querySelectorAll(".day-tab").forEach(btn => {
+    btn.addEventListener("click", () => {
+      tabs.querySelectorAll(".day-tab").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const day = TRIP.days.find(d => d.id === +btn.dataset.day);
+      container.innerHTML = renderDay(day);
+      container.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+}
+
+function renderNotice(notice) {
+  let html = `<h3>${notice.title}</h3>`;
+
+  if (notice.links?.length) {
+    html += `<div class="quick-links">${notice.links.map(l =>
+      `<a class="btn-link btn-ext" href="${l.url}" target="_blank" rel="noopener">🔗 ${l.label}</a>`
+    ).join("")}</div>`;
+  }
+
+  if (notice.items?.length) {
+    html += `<ul class="notice-list">${notice.items.map(i => `<li>${i}</li>`).join("")}</ul>`;
+  }
+
+  if (notice.sections?.length) {
+    html += notice.sections.map(s =>
+      `<div class="packing-section"><h4>${s.title}</h4><ul>${s.items.map(i => `<li>${i}</li>`).join("")}</ul></div>`
+    ).join("");
+  }
+
+  if (notice.pdfPages?.length) {
+    html += renderImages(notice.pdfPages);
+  }
+
+  return html;
+}
+
+function renderNotices() {
+  const tabs = document.getElementById("notice-tabs");
+  const content = document.getElementById("notice-content");
+
+  tabs.innerHTML = TRIP.notices.map((n, i) =>
+    `<button class="notice-tab${i === 0 ? " active" : ""}" data-notice="${n.id}">${n.title}</button>`
+  ).join("");
+
+  content.innerHTML = renderNotice(TRIP.notices[0]);
+
+  tabs.querySelectorAll(".notice-tab").forEach(btn => {
+    btn.addEventListener("click", () => {
+      tabs.querySelectorAll(".notice-tab").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const notice = TRIP.notices.find(n => n.id === btn.dataset.notice);
+      content.innerHTML = renderNotice(notice);
+    });
+  });
+}
+
+function setupNav() {
+  const mainBtns = document.querySelectorAll(".main-nav button");
+  const panels = document.querySelectorAll(".panel");
+
+  mainBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      mainBtns.forEach(b => b.classList.remove("active"));
+      panels.forEach(p => p.classList.remove("active"));
+      btn.classList.add("active");
+      document.getElementById(btn.dataset.panel).classList.add("active");
+    });
+  });
+}
+
+function setupLightbox() {
+  const lb = document.getElementById("lightbox");
+  const lbImg = lb.querySelector("img");
+
+  document.addEventListener("click", e => {
+    if (e.target.matches(".pdf-viewer img")) {
+      lbImg.src = e.target.src;
+      lb.classList.add("open");
+    }
+    if (e.target === lb) lb.classList.remove("open");
+  });
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") lb.classList.remove("open");
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".hero h1").textContent = TRIP.title;
+  document.querySelector(".hero .dates").textContent = TRIP.dates;
+  renderItinerary();
+  renderNotices();
+  setupNav();
+  setupLightbox();
+});

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="2026 沖繩 5 天 4 夜自由行行程與注意事項">
+  <meta name="theme-color" content="#023e8a">
+  <title>沖繩 5 天 4 夜｜互動行程</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>日本－沖繩 5 天 4 夜遊</h1>
+    <p class="dates">2026.06.26 – 06.30</p>
+    <span class="badge">自駕自由行 · 點擊地址即可導航</span>
+  </header>
+
+  <nav class="main-nav" aria-label="主要導覽">
+    <button class="active" data-panel="panel-itinerary">📅 每日行程</button>
+    <button data-panel="panel-notices">📋 注意事項</button>
+  </nav>
+
+  <main>
+    <section id="panel-itinerary" class="panel active" aria-label="每日行程">
+      <div class="quick-links">
+        <a class="btn-link btn-ext" href="https://vjw-lp.digital.go.jp/zh/" target="_blank" rel="noopener">🔗 Visit Japan Web</a>
+        <a class="btn-link btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%82%A3%E9%9C%B8%E6%A9%9F%E5%A0%B4" target="_blank" rel="noopener">📍 那霸機場</a>
+        <a class="btn-link btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=5201314%20Okinawa%20Rental%20Car" target="_blank" rel="noopener">🚗 租車公司</a>
+      </div>
+      <div id="day-tabs" class="day-tabs" role="tablist" aria-label="選擇日期"></div>
+      <div id="itinerary-content"></div>
+    </section>
+
+    <section id="panel-notices" class="panel" aria-label="注意事項">
+      <div id="notice-tabs" class="notice-tabs" role="tablist"></div>
+      <div id="notice-content" class="notice-content"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>資料來源：2026.06.26-30 日本－沖繩 5 天 4 夜遊</p>
+  </footer>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-label="圖片放大檢視">
+    <img src="" alt="放大檢視">
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
