@@ -238,15 +238,11 @@ body {
 
 .day-tabs-sticky.is-fixed {
   position: fixed;
-  left: 0;
-  right: 0;
   top: var(--nav-bottom);
-  width: 100%;
-  padding-left: max(1rem, var(--safe-left));
-  padding-right: max(1rem, var(--safe-right));
-  max-width: 800px;
-  margin: 0 auto;
+  z-index: 90;
+  margin: 0;
   box-sizing: border-box;
+  /* left / width 由 JS 依 .day-tabs-bar 容器同步，修正桌面版置中 */
 }
 
 .day-tabs-sentinel {
@@ -766,17 +762,14 @@ footer {
     padding-top: calc(0.85rem + var(--safe-top));
     max-width: 800px;
     margin: 0 auto;
-    background: transparent;
-    border-bottom: none;
+    background: rgba(252, 250, 242, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 119, 182, 0.08);
   }
 
   .day-tabs-bar {
     padding: 0 1.25rem;
-  }
-
-  .day-tabs-sticky.is-fixed {
-    padding-left: max(1.25rem, var(--safe-left));
-    padding-right: max(1.25rem, var(--safe-right));
   }
 }
 
@@ -792,11 +785,6 @@ footer {
 
   .day-tabs-bar {
     padding: 0 0.85rem;
-  }
-
-  .day-tabs-sticky.is-fixed {
-    padding-left: max(0.85rem, var(--safe-left));
-    padding-right: max(0.85rem, var(--safe-right));
   }
 
   .event {

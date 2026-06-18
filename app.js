@@ -106,6 +106,17 @@ function updateNavOffset() {
   }
 }
 
+function syncFixedBarGeometry(bar, barWrap) {
+  const rect = barWrap.getBoundingClientRect();
+  bar.style.left = `${rect.left}px`;
+  bar.style.width = `${rect.width}px`;
+}
+
+function clearFixedBarGeometry(bar) {
+  bar.style.left = "";
+  bar.style.width = "";
+}
+
 function setupDayTabsPin() {
   const barWrap = document.getElementById("day-tabs-bar");
   const bar = document.getElementById("day-tabs-sticky");
@@ -116,6 +127,7 @@ function setupDayTabsPin() {
   const pin = () => {
     if (!barWrap.classList.contains("visible")) {
       bar.classList.remove("is-fixed");
+      clearFixedBarGeometry(bar);
       placeholder.style.height = "0";
       return;
     }
@@ -126,9 +138,11 @@ function setupDayTabsPin() {
 
     if (shouldPin) {
       bar.classList.add("is-fixed");
+      syncFixedBarGeometry(bar, barWrap);
       placeholder.style.height = `${bar.offsetHeight}px`;
     } else {
       bar.classList.remove("is-fixed");
+      clearFixedBarGeometry(bar);
       placeholder.style.height = "0";
     }
   };
