@@ -54,25 +54,6 @@
 
   <script src="data.js"></script>
   <script src="app.js"></script>
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-  
-    // 👇 將你在步驟五取得的 Config 貼在下方取代這段
-    const firebaseConfig = {
-      apiKey: "AIzaSyD7_wuk8iUGf6vrTbPWqi796YUBlWxC8GQ",
-      authDomain: "aitravel-ec43b.firebaseapp.com",
-      projectId: "aitravel-ec43b",
-      storageBucket: "aitravel-ec43b.appspot.com",
-      messagingSenderId: "356936081383",
-      appId: "1:356936081383:web:83bda3e3f63a6756852742"
-    };
-  
-    // 啟動 Firebase 魔法
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    
-    console.log("🔥 Firebase 資料庫連線成功！並且已經開啟測試模式讀寫權限！");
-  </script>
+
 </body>
 </html>
