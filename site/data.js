@@ -393,6 +393,14 @@ const TRIP = {
       ]
     },
     {
+      id: "driving",
+      title: "行車相關事項",
+      items: [
+        "租車相關資料／自駕注意事項（日本交通規則、道路標誌、停車、高速公路、Mapcode、加油站）"
+      ],
+      pdfPages: [30, 31, 32, 33, 34, 35]
+    },
+    {
       id: "entry",
       title: "入境",
       links: [
