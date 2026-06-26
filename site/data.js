@@ -265,12 +265,15 @@ const TRIP = {
           ]
         },
         {
-          time: "16:00",
+          time: "15:30",
           title: "還車",
           type: "car",
+          locations: [
+            { name: "加油站", maps: "https://maps.app.goo.gl/XzspLda4g3MhjovC6" }
+          ],
           notes: [
             { text: "確認：ETC、加油、行李、車內物品" },
-            { text: "務必於 16:00 前完成還車" }
+            { text: "務必於 15:30 前完成還車" }
           ]
         },
         {
