@@ -312,8 +312,26 @@ const TRIP = {
       ]
     },
     {
+      id: "restaurants",
+      title: "地陪必吃清單",
+      sections: [
+        {
+          title: "🥇 必吃（TOP）",
+          items: ["Captain Kangaroo", "Yappari Steak", "Shimabuta", "Jack's Steak House", "Shrimp Wagon"]
+        },
+        {
+          title: "🥈 推薦",
+          items: ["A&W", "Jef", "Eibe", "Pork Tamago Onigiri", "Yukino 食堂"]
+        },
+        {
+          title: "🍦 甜點",
+          items: ["Blue Seal", "Maxi 布丁", "鹽屋", "天知群", "黑糖 en"]
+        }
+      ]
+    },
+    {
       id: "souvenirs",
-      title: "🛍 伴手禮攻略",
+      title: "伴手禮",
       sections: [
         {
           title: "一、經典必買與強力推薦",
@@ -369,78 +387,6 @@ const TRIP = {
             "那霸機場：古酒蛋糕、貓舌餅乾、柳月花生豆腐等熱門限定商品，建議回國前補貨"
           ]
         }
-      ]
-    },
-    {
-      id: "strategy",
-      title: "核心策略",
-      items: [
-        "每天 2～4 個核心點",
-        "減少集合次數（4 台車）",
-        "每天至少 1 間地陪推薦餐廳",
-        "美國村安排夕陽＋夜景",
-        "最後一天：國際通 → iias → 機場（順向不回頭）"
-      ]
-    },
-    {
-      id: "caravan",
-      title: "車隊規則",
-      sections: [
-        { title: "A 車", items: ["領隊導航"] },
-        { title: "B 車", items: ["嬰兒優先"] },
-        { title: "C 車", items: ["一般家庭"] },
-        { title: "D 車", items: ["補位＋採買"] }
-      ]
-    },
-    {
-      id: "meeting",
-      title: "集合規則",
-      items: [
-        "停車場 → 主入口 → 固定集合點",
-        "每站集合 10 分鐘",
-        "景點停車後請先集合再開始自由活動",
-        "餐廳排隊超過 30 分鐘，啟用備案"
-      ]
-    },
-    {
-      id: "restaurants",
-      title: "地陪必吃清單",
-      sections: [
-        {
-          title: "🥇 必吃（TOP）",
-          items: ["Captain Kangaroo", "Yappari Steak", "Shimabuta", "Jack's Steak House", "Shrimp Wagon"]
-        },
-        {
-          title: "🥈 推薦",
-          items: ["A&W", "Jef", "Eibe", "Pork Tamago Onigiri", "Yukino 食堂"]
-        },
-        {
-          title: "🍦 甜點",
-          items: ["Blue Seal", "Maxi 布丁", "鹽屋", "天知群", "黑糖 en"]
-        }
-      ]
-    },
-    {
-      id: "parking",
-      title: "停車攻略",
-      items: [
-        "國際通：みどり駐車場（四台車停同一區，步行 3–5 分鐘）",
-        "PARCO CITY：超大型停車場，最適合團體",
-        "美國村：Depot Island 海邊停車，夜景方便"
-      ],
-      links: [
-        { label: "みどり駐車場", url: "https://maps.google.com/?q=みどり駐車場+那霸" },
-        { label: "PARCO CITY 停車", url: "https://maps.google.com/?q=San-A+PARCO+CITY+parking" },
-        { label: "美國村停車", url: "https://maps.google.com/?q=Depot+Island+Parking" }
-      ]
-    },
-    {
-      id: "rating",
-      title: "地陪評分系統",
-      items: [
-        "🥇 必吃（不能錯過）",
-        "🥈 推薦（很值得）",
-        "🥉 有時間再去"
       ]
     },
     {
