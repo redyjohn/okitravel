@@ -312,57 +312,8 @@ const TRIP = {
       ]
     },
     {
-      id: "strategy",
-      title: "核心策略",
-      items: [
-        "每天 2～4 個核心點",
-        "減少集合次數（4 台車）",
-        "每天至少 1 間地陪推薦餐廳",
-        "美國村安排夕陽＋夜景",
-        "最後一天：國際通 → iias → 機場（順向不回頭）"
-      ]
-    },
-    {
-      id: "caravan",
-      title: "車隊規則",
-      sections: [
-        { title: "A 車", items: ["領隊導航"] },
-        { title: "B 車", items: ["嬰兒優先"] },
-        { title: "C 車", items: ["一般家庭"] },
-        { title: "D 車", items: ["補位＋採買"] }
-      ]
-    },
-    {
-      id: "meeting",
-      title: "集合規則",
-      items: [
-        "停車場 → 主入口 → 固定集合點",
-        "每站集合 10 分鐘",
-        "景點停車後請先集合再開始自由活動",
-        "餐廳排隊超過 30 分鐘，啟用備案"
-      ]
-    },
-    {
-      id: "restaurants",
-      title: "地陪必吃清單",
-      sections: [
-        {
-          title: "🥇 必吃（TOP）",
-          items: ["Captain Kangaroo", "Yappari Steak", "Shimabuta", "Jack's Steak House", "Shrimp Wagon"]
-        },
-        {
-          title: "🥈 推薦",
-          items: ["A&W", "Jef", "Eibe", "Pork Tamago Onigiri", "Yukino 食堂"]
-        },
-        {
-          title: "🍦 甜點",
-          items: ["Blue Seal", "Maxi 布丁", "鹽屋", "天知群", "黑糖 en"]
-        }
-      ]
-    },
-    {
       id: "souvenirs",
-      title: "伴手禮",
+      title: "🛍 伴手禮攻略",
       sections: [
         {
           title: "一、經典必買與強力推薦",
@@ -417,6 +368,55 @@ const TRIP = {
             "許田休息站：規模如大型超市，可買到市區較少見的地產與 35 Coffee 蛋糕",
             "那霸機場：古酒蛋糕、貓舌餅乾、柳月花生豆腐等熱門限定商品，建議回國前補貨"
           ]
+        }
+      ]
+    },
+    {
+      id: "strategy",
+      title: "核心策略",
+      items: [
+        "每天 2～4 個核心點",
+        "減少集合次數（4 台車）",
+        "每天至少 1 間地陪推薦餐廳",
+        "美國村安排夕陽＋夜景",
+        "最後一天：國際通 → iias → 機場（順向不回頭）"
+      ]
+    },
+    {
+      id: "caravan",
+      title: "車隊規則",
+      sections: [
+        { title: "A 車", items: ["領隊導航"] },
+        { title: "B 車", items: ["嬰兒優先"] },
+        { title: "C 車", items: ["一般家庭"] },
+        { title: "D 車", items: ["補位＋採買"] }
+      ]
+    },
+    {
+      id: "meeting",
+      title: "集合規則",
+      items: [
+        "停車場 → 主入口 → 固定集合點",
+        "每站集合 10 分鐘",
+        "景點停車後請先集合再開始自由活動",
+        "餐廳排隊超過 30 分鐘，啟用備案"
+      ]
+    },
+    {
+      id: "restaurants",
+      title: "地陪必吃清單",
+      sections: [
+        {
+          title: "🥇 必吃（TOP）",
+          items: ["Captain Kangaroo", "Yappari Steak", "Shimabuta", "Jack's Steak House", "Shrimp Wagon"]
+        },
+        {
+          title: "🥈 推薦",
+          items: ["A&W", "Jef", "Eibe", "Pork Tamago Onigiri", "Yukino 食堂"]
+        },
+        {
+          title: "🍦 甜點",
+          items: ["Blue Seal", "Maxi 布丁", "鹽屋", "天知群", "黑糖 en"]
         }
       ]
     },

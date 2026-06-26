@@ -257,6 +257,23 @@ function renderNotice(notice) {
   return html;
 }
 
+function activateNotice(noticeId) {
+  const tabs = document.getElementById("notice-tabs");
+  const content = document.getElementById("notice-content");
+  const notice = TRIP.notices.find(n => n.id === noticeId) || TRIP.notices[0];
+  const targetId = notice.id;
+
+  tabs.querySelectorAll(".notice-tab").forEach(b => {
+    b.classList.toggle("active", b.dataset.notice === targetId);
+  });
+  content.innerHTML = renderNotice(notice);
+
+  const activeTab = tabs.querySelector(`[data-notice="${targetId}"]`);
+  if (activeTab) {
+    activeTab.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+  }
+}
+
 function renderNotices() {
   const tabs = document.getElementById("notice-tabs");
   const content = document.getElementById("notice-content");
@@ -268,13 +285,34 @@ function renderNotices() {
   content.innerHTML = renderNotice(TRIP.notices[0]);
 
   tabs.querySelectorAll(".notice-tab").forEach(btn => {
-    btn.addEventListener("click", () => {
-      tabs.querySelectorAll(".notice-tab").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      const notice = TRIP.notices.find(n => n.id === btn.dataset.notice);
-      content.innerHTML = renderNotice(notice);
-    });
+    btn.addEventListener("click", () => activateNotice(btn.dataset.notice));
   });
+}
+
+function openPanel(panelId, noticeId) {
+  const mainBtns = document.querySelectorAll(".main-nav button");
+  const panels = document.querySelectorAll(".panel");
+  const dayTabsBar = document.getElementById("day-tabs-bar");
+
+  mainBtns.forEach(b => {
+    let active = false;
+    if (panelId === "panel-itinerary") {
+      active = b.dataset.panel === "panel-itinerary";
+    } else if (noticeId) {
+      active = b.dataset.notice === noticeId;
+    } else {
+      active = b.dataset.panel === "panel-notices" && !b.dataset.notice;
+    }
+    b.classList.toggle("active", active);
+  });
+  panels.forEach(p => p.classList.toggle("active", p.id === panelId));
+
+  if (dayTabsBar) {
+    dayTabsBar.classList.toggle("visible", panelId === "panel-itinerary");
+  }
+
+  if (noticeId) activateNotice(noticeId);
+  window.dispatchEvent(new Event("scroll"));
 }
 
 function setupNav() {
@@ -284,15 +322,7 @@ function setupNav() {
 
   mainBtns.forEach(btn => {
     btn.addEventListener("click", () => {
-      mainBtns.forEach(b => b.classList.remove("active"));
-      panels.forEach(p => p.classList.remove("active"));
-      btn.classList.add("active");
-      document.getElementById(btn.dataset.panel).classList.add("active");
-
-      if (dayTabsBar) {
-        dayTabsBar.classList.toggle("visible", btn.dataset.panel === "panel-itinerary");
-      }
-      window.dispatchEvent(new Event("scroll"));
+      openPanel(btn.dataset.panel, btn.dataset.notice || null);
     });
   });
 }
@@ -324,4 +354,8 @@ document.addEventListener("DOMContentLoaded", () => {
   updateNavOffset();
   setupDayTabsPin();
   window.addEventListener("resize", updateNavOffset);
+
+  if (location.hash === "#souvenirs") {
+    openPanel("panel-notices", "souvenirs");
+  }
 });

@@ -124,7 +124,8 @@ body {
 
 .main-nav button {
   flex: 1;
-  padding: 0.75rem 1rem;
+  min-width: 0;
+  padding: 0.75rem 0.65rem;
   border: 2px solid transparent;
   border-radius: var(--radius-pill);
   background: var(--card-solid);
@@ -590,12 +591,22 @@ body {
 /* ── Notice Tabs ── */
 .notice-tabs {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.55rem;
   margin-bottom: 1.25rem;
+  overflow-x: auto;
+  padding-bottom: 0.35rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.notice-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .notice-tab {
+  flex-shrink: 0;
   padding: 0.55rem 1rem;
   border: 2px solid rgba(0, 119, 182, 0.12);
   border-radius: var(--radius-pill);
