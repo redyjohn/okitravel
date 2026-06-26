@@ -1,458 +1,382 @@
 const TRIP = {
-  title: "日本－沖繩 5 天 4 夜遊",
-  dates: "2026.06.26 – 06.30",
+  title: "2026 沖繩親子自駕旅行",
+  dates: "2026.06.27 – 06.30",
   days: [
     {
       id: 1,
       label: "Day 1",
-      date: "2026.06.26",
-      subtitle: "抵達那霸・國際通",
-      accommodation: "海洋酒店",
+      date: "2026.06.27",
+      subtitle: "抵達沖繩・前往名護住宿",
+      accommodation: "名護（Biimata）",
       events: [
         {
-          time: "03:50–04:30",
-          title: "住家 → 臺中國際機場（RMQ）國際航廈",
-          type: "transport",
-          links: [
-            { label: "臺中國際機場", url: "https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E4%B8%AD%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4", type: "maps" }
-          ],
-          notes: [
-            { text: "Visit Japan Web（6/25 預定入境，最晚在抵達日本 6 小時以前完成登錄）", link: "https://services.digital.go.jp/zh-cmn-hant/visit-japan-web/" }
-          ]
-        },
-        {
-          time: "04:40–07:10",
-          title: "辦理登機手續（提前 2.5 小時）",
-          type: "airport",
-          notes: [
-            { text: "一般報到櫃檯於起飛前 2.5 小時開始受理，並於起飛前 45 分鐘截止" },
-            { text: "使用 e-Gate 自動查驗通關服務（無需事先註冊）" },
-            { text: "06:10 至登機門辦理登機手續" },
-            { text: "最遲於起飛前 30 分鐘抵達登機門，登機門於起飛前 10 分鐘關閉" }
-          ]
-        },
-        {
-          time: "07:10–09:40",
-          title: "飛行：臺中 → 那霸機場（OKA）",
+          time: "13:10",
+          title: "台中機場起飛",
           type: "flight",
+          notes: [{ text: "抵達沖繩：15:45" }]
+        },
+        {
+          time: "15:45",
+          title: "抵達那霸機場",
+          type: "airport",
           links: [
-            { label: "那霸機場", url: "https://www.google.com/maps/search/?api=1&query=%E9%82%A3%E9%9C%B8%E6%A9%9F%E5%A0%B4", type: "maps" }
+            { label: "那霸機場", url: "https://maps.google.com/?q=Naha+Airport", type: "maps" }
           ]
         },
         {
-          time: "11:00–11:10",
-          title: "5201314 Okinawa Rental Car（取車）",
+          time: "15:45–17:30",
+          title: "入境、領行李、租車",
           type: "car",
           links: [
-            { label: "Google Maps", url: "https://www.google.com/maps/search/?api=1&query=5201314%20Okinawa%20Rental%20Car", type: "maps" }
+            { label: "那霸機場", url: "https://maps.google.com/?q=Naha+Airport", type: "maps" }
           ]
         },
         {
-          time: "11:10–11:40",
-          title: "驗車流程",
+          time: "17:30–18:00",
+          title: "車隊集合、設定導航",
           type: "car",
           notes: [
-            { text: "租車相關資料／自駕注意事項請參考注意事項頁" },
-            { text: "豪華安心全保（一次事故為上限）" },
-            { text: "如發生事故，必須第一時間在現場如實通報公司並報警取得事故證明書，方能受保" }
+            { text: "每台車皆請設定相同導航目的地" },
+            { text: "A 車：領隊・導航｜B 車：嬰兒優先｜C 車：一般家庭｜D 車：採買補位" }
           ]
         },
         {
-          time: "11:40–12:00",
-          title: "停車場",
-          type: "parking",
-          locations: [
-            { name: "國際通停車場", mapcode: "33 157 291*34", maps: "https://maps.app.goo.gl/95Sgb4BDBae4o4Vn6" },
-            { name: "タイムズ那覇まちぐゎー駐車場", mapcode: "33 157 260*03", maps: "https://maps.app.goo.gl/HixD7ZixjPEgsnwE7" }
-          ]
+          time: "18:00",
+          title: "出發前往名護",
+          type: "transport"
         },
         {
-          time: "12:00–14:50",
-          title: "第一牧志公設市場",
-          type: "food",
-          hours: "08:00–22:00",
-          links: [
-            { label: "Google Maps", url: "https://www.google.com/maps/search/?api=1&query=%E7%AC%AC%E4%B8%80%E7%89%A7%E5%BF%97%E5%85%AC%E8%A8%AD%E5%B8%82%E5%A0%B4%20%E6%B2%96%E7%B9%A9", type: "maps" }
-          ],
-          recommendations: [
-            { name: "Pork Tamago Onigiri Makishi Market", hours: "07:00–20:00" },
-            { name: "肉屋ししや", hours: "11:00–18:00" },
-            { name: "福助玉子燒", hours: "07:30–19:30" }
-          ]
-        },
-        {
-          time: "14:50–15:00",
-          title: "停車場",
-          type: "parking",
-          locations: [
-            { name: "テクニカルパーク安里第１駐車場", mapcode: "33 158 647*27", maps: "https://maps.app.goo.gl/ZBCFQDQoHnp7HoT6A" },
-            { name: "リパーク那覇国際通り安里三叉路駐車場", mapcode: "33 158 707*36", maps: "https://maps.app.goo.gl/Cx9uR493wvwS1Lmc6" }
-          ]
-        },
-        {
-          time: "15:00–15:30",
-          title: "海洋酒店 Check in",
+          time: "20:00",
+          title: "抵達住宿、Check in",
           type: "hotel",
           links: [
-            { label: "Google Maps", url: "https://www.google.com/maps/search/?api=1&query=%E6%B5%B7%E6%B4%8B%E9%85%92%E5%BA%97%20%E6%B2%96%E7%B9%A9%20%E9%82%A3%E9%9C%B8", type: "maps" }
-          ],
-          imagePages: [4]
-        },
-        {
-          time: "15:30–16:00",
-          title: "申請 TOKIO OMOTENASHI POLICY 東京海上日動日本旅遊保險",
-          type: "insurance",
-          notes: [
-            { text: "保險期間：2026.06.27–30" },
-            { text: "透過 Visit Japan Web 申請", link: "https://services.digital.go.jp/zh-cmn-hant/visit-japan-web/" }
+            { label: "名護住宿", url: "https://maps.google.com/?q=1220-25-5+Biimata+Nago+Okinawa", type: "maps" }
           ]
         },
         {
-          time: "16:00–19:40",
-          title: "國際通商店街",
+          time: "20:30",
+          title: "便利商店採買",
           type: "shopping",
-          links: [
-            { label: "國際通", url: "https://www.google.com/maps/search/?api=1&query=%E5%9C%8B%E9%9A%9B%E9%80%9A%20%E9%82%A3%E9%9C%B8", type: "maps" }
-          ],
-          shops: [
-            { name: "Calbee+", hours: "10:00–21:00" },
-            { name: "唐吉訶德", hours: "09:00–05:00" }
-          ],
-          recommendations: [
-            { name: "暖暮拉麵", hours: "10:00–02:00" },
-            { name: "一蘭", hours: "24 小時營業" },
-            { name: "福木屋（年輪蛋糕）", hours: "10:00–20:00" }
+          notes: [
+            { text: "第一天不建議安排景點，建議採買：早餐、飲料、消夜、嬰兒用品" }
           ]
-        },
-        {
-          time: "19:40–20:00",
-          title: "回住宿地點",
-          type: "rest"
-        },
-        {
-          time: "20:00–07:30",
-          title: "休息充電",
-          type: "rest"
         }
       ]
     },
     {
       id: 2,
       label: "Day 2",
-      date: "2026.06.27",
-      subtitle: "泊港・PARCO CITY・名護",
-      accommodation: "Lieta Nakayama",
+      date: "2026.06.28",
+      subtitle: "北部人氣景點一日遊",
+      accommodation: "名護（Biimata）",
       events: [
-        { time: "07:30–08:50", title: "起床整裝", type: "rest" },
-        { time: "08:50–09:00", title: "海洋酒店 Check out", type: "hotel" },
         {
-          time: "09:00–10:20",
-          title: "泊港漁市場",
-          type: "food",
-          hours: "07:00–18:00",
-          parking: { name: "泊いゆまち駐車場", mapcode: "33 216 085*14", maps: "https://maps.app.goo.gl/mFfeA5753tFXZdkJ6" },
-          links: [{ label: "泊港漁市場", url: "https://www.google.com/maps/search/?api=1&query=%E6%B3%8A%E6%B8%AF%E6%BC%81%E5%B8%82%E5%A0%B4%20%E6%B2%96%E7%B9%A9", type: "maps" }]
+          time: "09:30",
+          title: "飯店出發",
+          type: "transport"
         },
         {
-          time: "10:20–14:30",
-          title: "PARCO CITY",
-          type: "shopping",
-          hours: "10:00–22:00",
-          parking: { name: "PARCO CITY 駐車場", mapcode: "33 339 002*38", maps: "https://maps.app.goo.gl/5hdreEuP84i1BPGy5" },
-          links: [{ label: "PARCO CITY", url: "https://www.google.com/maps/search/?api=1&query=PARCO%20CITY%20%E6%B2%96%E7%B9%A9", type: "maps" }],
-          shops: [
-            "3COINS+plus（1F）", "Akachan（2F）", "ABC-MART（2F）", "H&M（2F）",
-            "MUJI（3F）", "UNIQLO（3F）", "ABC-MART GRANDSTAGE（3F）"
+          time: "10:00–13:00",
+          title: "沖繩美麗海水族館",
+          type: "attraction",
+          hours: "08:30–18:30（最後入館 17:30）",
+          parking: { name: "P7 / P8 停車場", maps: "https://maps.google.com/?q=Okinawa+Churaumi+Aquarium" },
+          links: [
+            { label: "Google Maps", url: "https://maps.google.com/?q=Okinawa+Churaumi+Aquarium", type: "maps" },
+            { label: "官方網站", url: "https://churaumi.okinawa/", type: "external" }
+          ],
+          notes: [{ text: "建議停留約 3 小時" }]
+        },
+        {
+          time: "13:15",
+          title: "午餐",
+          type: "food",
+          recommendations: [
+            { name: "Captain Kangaroo Hamburger", hours: "若排隊超過 30 分鐘可改便利商店" }
+          ],
+          links: [
+            { label: "Captain Kangaroo Hamburger", url: "https://maps.google.com/?q=Captain+Kangaroo+Hamburger+Okinawa", type: "maps" }
           ]
         },
         {
-          time: "14:30–17:00",
-          title: "Lieta Nakayama Check in",
-          type: "hotel",
-          parking: { name: "飯店附設停車場", mapcode: "206 716 706*88", maps: "https://maps.app.goo.gl/eHQHRxx5HB9JtGYL8" },
-          links: [{ label: "Lieta Nakayama", url: "https://www.google.com/maps/search/?api=1&query=Lieta%20Nakayama%20%E6%B2%96%E7%B9%A9", type: "maps" }],
-          imagePages: [8]
+          time: "14:40–15:30",
+          title: "備瀨福木林道",
+          type: "attraction",
+          links: [
+            { label: "Google Maps", url: "https://maps.google.com/?q=Bise+Fukugi+Tree+Road", type: "maps" }
+          ],
+          notes: [
+            { text: "建議停留 45 分鐘" },
+            { text: "適合推嬰兒車、散步、拍照" }
+          ]
         },
         {
-          time: "17:00–21:00",
-          title: "百年古家 大家 阿古豬",
-          type: "food",
-          hours: "11:00–15:30、17:30–21:00",
-          parking: { name: "商家附設停車場", mapcode: "206 745 086*87", maps: "https://maps.app.goo.gl/8G2fdLW4at7kbPpr7" },
-          links: [{ label: "百年古家 大家 阿古豬", url: "https://www.google.com/maps/search/?api=1&query=%E7%99%BE%E5%B9%B4%E5%8F%A4%E5%AE%B6%20%E5%A4%A7%E5%AE%B6%20%E9%98%BF%E5%8F%A4%E8%B1%AC%20%E6%B2%96%E7%B9%A9", type: "maps" }],
-          imagePages: [9]
+          time: "15:50–17:20",
+          title: "古宇利島",
+          type: "attraction",
+          links: [
+            { label: "Google Maps", url: "https://maps.google.com/?q=Kouri+Island", type: "maps" }
+          ],
+          recommendations: [
+            { name: "古宇利大橋" },
+            { name: "古宇利海灘" }
+          ],
+          notes: [{ text: "建議停留 90 分鐘" }]
         },
-        { time: "21:00–21:30", title: "回住宿地點", type: "rest" },
-        { time: "21:30–07:30", title: "休息充電", type: "rest" }
+        {
+          time: "18:20",
+          title: "返回名護住宿",
+          type: "rest",
+          links: [
+            { label: "名護住宿", url: "https://maps.google.com/?q=1220-25-5+Biimata+Nago+Okinawa", type: "maps" }
+          ]
+        }
       ]
     },
     {
       id: 3,
       label: "Day 3",
-      date: "2026.06.28",
-      subtitle: "美麗海水族館・名護市",
-      accommodation: "Lieta Nakayama",
+      date: "2026.06.29",
+      subtitle: "名護 → 北谷 → 美國村",
+      accommodation: "北谷",
       events: [
-        { time: "07:30–09:00", title: "起床整裝", type: "rest" },
         {
-          time: "09:00–16:00",
-          title: "美麗海水族館",
-          type: "attraction",
-          hours: "08:30–18:30",
-          parking: {
-            name: "美ら海北駐車場（立体駐車場）P7 立體停車場",
-            mapcode: "553 075 767*43",
-            tel: "0980-48-2741",
-            maps: "https://maps.app.goo.gl/XEEM3LXRVagsfkjA8"
-          },
-          links: [
-            { label: "美麗海水族館", url: "https://www.google.com/maps/search/?api=1&query=%E6%B2%96%E7%B9%A9%E7%BE%8E%E9%BA%97%E6%B5%B7%E6%B0%B4%E6%97%8F%E9%A4%A8", type: "maps" },
-            { label: "官方網站", url: "https://churaumi.okinawa/", type: "external" }
-          ],
-          notes: [
-            { text: "展覽範圍從 4F 開始，入口處設置於 3F（珊瑚大廳），入館後慢慢地往 2F、1F 參觀" }
-          ],
-          schedule: [
-            { label: "鬼蝠魟餵食", time: "09:30" },
-            { label: "鯨鯊餵食", time: "15:00、17:00" },
-            { label: "海豚劇場－海豚秀", time: "10:30、11:30、13:00、15:00、17:00" }
-          ],
-          imagePages: [12, 13]
+          time: "09:30",
+          title: "退房",
+          type: "hotel"
         },
-        { time: "16:00–16:40", title: "回住宿地點", type: "rest" },
         {
-          time: "17:30–19:30",
-          title: "名護市隨意晃晃",
+          time: "10:50–13:20",
+          title: "San-A PARCO CITY",
           type: "shopping",
-          shops: [
-            { name: "唐吉訶德", hours: "09:00–02:00" },
-            { name: "AEON", hours: "08:00–23:00" }
+          links: [
+            { label: "Google Maps", url: "https://maps.google.com/?q=San-A+PARCO+CITY", type: "maps" }
+          ],
+          shops: ["GU", "UNIQLO", "Loft", "Hands", "San-A 超市"],
+          notes: [{ text: "建議停留約 2.5 小時" }]
+        },
+        {
+          time: "13:20–14:10",
+          title: "午餐（PARCO CITY 美食街）",
+          type: "food"
+        },
+        {
+          time: "15:00–16:00",
+          title: "Sports Depo",
+          type: "shopping",
+          links: [
+            { label: "Google Maps", url: "https://maps.google.com/?q=Sports+Depo+Ameku", type: "maps" }
+          ],
+          shops: ["Nike", "adidas", "Mizuno", "Yonex", "Columbia"],
+          notes: [{ text: "建議停留 1 小時" }]
+        },
+        {
+          time: "16:30",
+          title: "北谷住宿 Check in",
+          type: "hotel"
+        },
+        {
+          time: "17:00–21:00",
+          title: "美國村",
+          type: "shopping",
+          links: [
+            { label: "Google Maps", url: "https://maps.google.com/?q=American+Village+Okinawa", type: "maps" }
           ],
           recommendations: [
-            { name: "百年古家 大家 阿古豬", hours: "11:00–15:30、17:30–21:00" },
-            { name: "燒肉本部牧場", hours: "11:30–22:00" },
-            { name: "暖暮拉麵", hours: "10:00–00:00" }
+            { name: "看夕陽" },
+            { name: "夜景" },
+            { name: "特色小店" },
+            { name: "Blue Seal" },
+            { name: "Starbucks" }
           ],
-          links: [{ label: "名護市", url: "https://www.google.com/maps/search/?api=1&query=%E5%90%8D%E8%AD%B7%E5%B8%82%20%E6%B2%96%E7%B9%A9", type: "maps" }]
+          notes: [{ text: "建議停留 4 小時" }]
         },
-        { time: "19:30–20:00", title: "回住宿地點", type: "rest" },
-        { time: "20:00–09:00", title: "休息充電", type: "rest" }
+        {
+          time: "晚餐",
+          title: "晚餐",
+          type: "food",
+          recommendations: [
+            { name: "Blue Ocean Steak（推薦）" },
+            { name: "A&W 美浜店（備案）" }
+          ],
+          links: [
+            { label: "Blue Ocean Steak", url: "https://maps.google.com/?q=Blue+Ocean+Steak+Okinawa", type: "maps" },
+            { label: "A&W 美浜店", url: "https://maps.google.com/?q=A%26W+Mihama", type: "maps" }
+          ]
+        }
       ]
     },
     {
       id: 4,
       label: "Day 4",
-      date: "2026.06.29",
-      subtitle: "古宇利島・美國村",
-      accommodation: "Terrace Garden Mihama Resort",
-      events: [
-        { time: "09:00–10:20", title: "起床整裝", type: "rest" },
-        { time: "10:20–10:30", title: "Lieta Nakayama Check out", type: "hotel" },
-        {
-          time: "10:30–12:30",
-          title: "古宇利蝦蝦飯",
-          type: "food",
-          hours: "11:00–16:00",
-          parking: { name: "商家附設停車場", mapcode: "485 692 138*44", maps: "https://maps.app.goo.gl/uqe7brpmCiSnFhC97" },
-          links: [{ label: "古宇利蝦蝦飯", url: "https://www.google.com/maps/search/?api=1&query=%E5%8F%A4%E5%AE%87%E5%88%A9%E8%9D%A6%E8%9D%A6%E9%A3%AF", type: "maps" }]
-        },
-        {
-          time: "12:30–13:30",
-          title: "古宇利大橋 南端觀景台",
-          type: "attraction",
-          parking: { name: "古宇利大橋駐車場", mapcode: "485 601 862*23", maps: "https://maps.app.goo.gl/SR742iQVXZkdr17R7" },
-          links: [{ label: "古宇利大橋", url: "https://maps.app.goo.gl/SR742iQVXZkdr17R7", type: "maps" }]
-        },
-        {
-          time: "13:30–16:00",
-          title: "Terrace Garden Mihama Resort Check in",
-          type: "hotel",
-          parking: { name: "飯店附設停車場", mapcode: "33 526 581*87", maps: "https://maps.app.goo.gl/81LR7HAGxtLMf2TVA" },
-          links: [{ label: "Terrace Garden Mihama Resort", url: "https://maps.app.goo.gl/81LR7HAGxtLMf2TVA", type: "maps" }],
-          imagePages: [17]
-        },
-        {
-          time: "16:00–21:50",
-          title: "美國村",
-          type: "shopping",
-          hours: "10:00–22:00",
-          parking: { name: "Depot Island D 駐車場", mapcode: "33 525 385*83", maps: "https://maps.app.goo.gl/9sb43W3naQECKz2T6" },
-          links: [{ label: "美國村", url: "https://www.google.com/maps/search/?api=1&query=%E7%BE%8E%E5%9C%8B%E6%9D%91%20%E6%B2%96%E7%B9%A9", type: "maps" }],
-          recommendations: [
-            { name: "迴轉壽司市場 美浜店", hours: "11:30–14:00、16:30–21:50" },
-            { name: "Benson's", hours: "10:00–21:00" },
-            { name: "豬肉蛋飯糰 北谷店", hours: "07:00–20:00" }
-          ],
-          imagePages: [18]
-        },
-        { time: "21:50–22:00", title: "回住宿地點", type: "rest" },
-        { time: "22:00–09:00", title: "休息充電", type: "rest" }
-      ]
-    },
-    {
-      id: 5,
-      label: "Day 5",
       date: "2026.06.30",
-      subtitle: "返家",
+      subtitle: "國際通 → iias → 回台灣",
       accommodation: null,
       events: [
-        { time: "09:00–10:30", title: "起床整裝", type: "rest" },
-        { time: "10:30–10:40", title: "Terrace Garden Mihama Resort Check out", type: "hotel" },
         {
-          time: "10:40–12:20",
-          title: "浜屋沖繩麵",
-          type: "food",
-          hours: "10:00–17:30",
-          parking: { name: "浜屋そば駐車場", mapcode: "33 584 141*25", maps: "https://maps.app.goo.gl/v9mXerULzHZXFjRy7" },
-          links: [{ label: "浜屋沖繩麵", url: "https://www.google.com/maps/search/?api=1&query=%E6%B5%9C%E5%B1%8B%20%E6%B2%96%E7%B9%A9%E9%BA%B5", type: "maps" }]
-        },
-        {
-          time: "12:20–15:10",
-          title: "波上宮",
-          type: "attraction",
-          hours: "09:00–17:00",
-          locations: [
-            { name: "コーラルパーキング波之上駐車場", mapcode: "33 155 745*34", maps: "https://maps.app.goo.gl/H4otdwonwrGWxVCfA" },
-            { name: "波上宮停車場", mapcode: "33 155 688*83", maps: "https://maps.app.goo.gl/KsdwiZRWksoGt8Qj9" }
-          ],
-          links: [{ label: "波上宮", url: "https://maps.app.goo.gl/KsdwiZRWksoGt8Qj9", type: "maps" }]
-        },
-        {
-          time: "15:10–15:30",
-          title: "加油站",
-          type: "car",
-          locations: [{
-            name: "ENEOS EneJet サンセール宇栄原 SS",
-            mapcode: "33 065 411*08",
-            maps: "https://maps.app.goo.gl/XzspLda4g3MhjovC6",
-            note: "入滿油，保留收據，還車時出示"
-          }]
-        },
-        {
-          time: "15:40–15:50",
-          title: "5201314 Okinawa Rental Car（還車）",
-          type: "car",
-          notes: [{ text: "出示入滿油收據" }]
-        },
-        {
-          time: "16:10–17:00",
-          title: "那霸機場（OKA）",
-          type: "airport",
-          links: [{ label: "那霸機場", url: "https://www.google.com/maps/search/?api=1&query=%E9%82%A3%E9%9C%B8%E6%A9%9F%E5%A0%B4", type: "maps" }]
-        },
-        {
-          time: "17:00–19:00",
-          title: "辦理登機手續（提前 2 小時）",
-          type: "airport",
+          time: "19:00",
+          title: "航班起飛返回台灣",
+          type: "flight",
           notes: [
-            { text: "沖繩出發航班：報到櫃檯於起飛前 2 小時開放，並於起飛前 45 分鐘截止" },
-            { text: "使用 e-Gate 自動查驗通關服務（無需事先註冊）" },
-            { text: "18:00 至登機門辦理登機手續" },
-            { text: "最遲於起飛前 30 分鐘抵達登機門，登機門於起飛前 10 分鐘關閉" }
+            { text: "建議 16:00 完成還車、17:00 抵達機場" }
           ]
         },
         {
-          time: "19:00–19:30",
-          title: "飛行：那霸 → 臺中國際機場（RMQ）",
-          type: "flight"
+          time: "09:30",
+          title: "退房",
+          type: "hotel"
         },
         {
-          time: "20:00–20:40",
-          title: "返家",
-          type: "rest",
-          notes: [{ text: "感謝家人這趟旅遊的陪伴～" }]
+          time: "10:00",
+          title: "出發前往國際通",
+          type: "transport"
+        },
+        {
+          time: "10:45–13:00",
+          title: "國際通",
+          type: "shopping",
+          links: [
+            { label: "Google Maps", url: "https://maps.google.com/?q=Kokusai+Dori+Naha", type: "maps" }
+          ],
+          shops: [
+            "平和通商店街", "第一牧志公設市場", "唐吉訶德", "Blue Seal",
+            "Orion Store", "琉球玻璃", "沖繩限定伴手禮"
+          ]
+        },
+        {
+          time: "13:00–14:00",
+          title: "午餐",
+          type: "food",
+          recommendations: [
+            { name: "Jack's Steak House（推薦一）" },
+            { name: "Yunangi（推薦二）" }
+          ],
+          links: [
+            { label: "Jack's Steak House", url: "https://maps.google.com/?q=Jack's+Steak+House+Naha", type: "maps" },
+            { label: "Yunangi", url: "https://maps.google.com/?q=Yunangi+Naha", type: "maps" }
+          ]
+        },
+        {
+          time: "14:20–15:40",
+          title: "iias Okinawa Toyosaki",
+          type: "shopping",
+          links: [
+            { label: "Google Maps", url: "https://maps.google.com/?q=iias+Okinawa+Toyosaki", type: "maps" }
+          ],
+          shops: ["GU", "UNIQLO", "藥妝", "超市", "ABC-MART"],
+          notes: [{ text: "建議停留約 1 小時，最後補貨" }]
+        },
+        {
+          time: "15:40",
+          title: "前往租車公司",
+          type: "car"
+        },
+        {
+          time: "16:00",
+          title: "還車",
+          type: "car",
+          notes: [
+            { text: "確認：ETC、加油、行李、車內物品" },
+            { text: "返程當天務必於 16:00 前完成還車，避免影響航班" }
+          ]
+        },
+        {
+          time: "16:30",
+          title: "接駁車前往機場",
+          type: "transport"
+        },
+        {
+          time: "17:00",
+          title: "抵達那霸機場",
+          type: "airport",
+          links: [
+            { label: "那霸機場", url: "https://maps.google.com/?q=Naha+Airport", type: "maps" }
+          ],
+          notes: [
+            { text: "建議：報到、托運、免稅店、最後採買" }
+          ]
+        },
+        {
+          time: "19:00",
+          title: "返回台灣 ✈️",
+          type: "flight"
         }
       ]
     }
   ],
   notices: [
     {
+      id: "caravan",
+      title: "車隊集合規則",
+      sections: [
+        {
+          title: "A 車",
+          items: ["領隊", "導航"]
+        },
+        {
+          title: "B 車",
+          items: ["嬰兒優先"]
+        },
+        {
+          title: "C 車",
+          items: ["一般家庭"]
+        },
+        {
+          title: "D 車",
+          items: ["採買補位"]
+        }
+      ]
+    },
+    {
+      id: "meeting",
+      title: "集合原則",
+      items: [
+        "每個景點皆以停車場、正門入口、固定集合點為唯一集合位置",
+        "每站集合時間約 10 分鐘",
+        "景點停車後請先集合再開始自由活動",
+        "若餐廳排隊超過 30 分鐘，直接啟用備案餐廳或便利商店，不影響整體行程"
+      ]
+    },
+    {
+      id: "general",
+      title: "行程注意事項",
+      items: [
+        "旅遊日期：2026/06/27（六）－2026/06/30（二）",
+        "人數：11 位大人、4 位嬰兒",
+        "交通方式：4 台自駕",
+        "住宿：6/27－6/29 名護、6/29 北谷",
+        "每台車皆請設定相同導航目的地",
+        "返程當天務必於 16:00 前完成還車，避免影響 19:00 航班"
+      ]
+    },
+    {
       id: "entry",
-      title: "入境（臺灣）注意事項",
-      pdfPages: [22, 23, 24, 25, 26, 27],
+      title: "入境注意事項",
       links: [
         { label: "Visit Japan Web", url: "https://services.digital.go.jp/zh-cmn-hant/visit-japan-web/" },
         { label: "臺灣入境查詢", url: "https://www.immigration.gov.tw/" }
       ]
     },
     {
-      id: "luggage",
-      title: "行李注意事項",
-      pdfPages: [28, 29, 30],
-      items: [
-        "備用鋰電池必須低於 100 瓦時（Wh）/ 2 克鋰容量（LC），行動電源若無明確標示規格或數值則一律禁止攜帶",
-        "額定能量公式：Wh = mAh / 1000 × Volt（電壓）",
-        "例：20000mAh、3.7V → 20000/1000×3.7 = 74Wh",
-        "鋰電池容量在 100 瓦時（含）以下，每人最多可攜帶 15 個可攜式電子裝置和（或）20 個備用電池，超過數量需經航空公司同意",
-        "電池須個別保護避免短路（電池保護盒、絕緣膠帶或塑膠保護袋），不可放置於託運行李中"
-      ]
-    },
-    {
       id: "car",
-      title: "租車相關資料／自駕注意事項",
-      pdfPages: [31, 32, 33, 34, 35, 36, 37],
+      title: "租車／自駕注意事項",
       items: [
-        "豪華安心全保（一次事故為上限）",
-        "如發生事故，必須第一時間在現場如實通報公司並報警取得事故證明書，方能受保",
+        "如發生事故，必須第一時間在現場如實通報公司並報警取得事故證明書",
+        "還車前需確認 ETC、加油、行李、車內物品",
         "還車前需入滿油並保留收據"
-      ],
-      links: [
-        { label: "5201314 Okinawa Rental Car", url: "https://www.google.com/maps/search/?api=1&query=5201314%20Okinawa%20Rental%20Car" }
-      ]
-    },
-    {
-      id: "packing",
-      title: "必帶物品＆行前確認",
-      pdfPages: [38, 39, 40, 41, 42, 43],
-      sections: [
-        {
-          title: "重要隨身物品",
-          items: [
-            "登機證", "護照【含照片簽名頁影本（2 份）】", "身分證【含正、反面影本（2 份）】",
-            "健保卡【含正、反面影本（2 份）】", "證件大頭照（2 吋）（4 張）",
-            "汽車駕照", "汽車駕照（日文譯本）", "住宿相關資料", "旅遊平安（不便）險相關資料",
-            "旅遊計畫（紙本）", "臺幣（2,000 NTD）", "日幣（115,000 JPY）（含家人份）",
-            "聯邦銀行－吉鶴卡（使用 QUICPay）"
-          ]
-        },
-        {
-          title: "生活物品",
-          items: [
-            "mont-bell Trail Wallet", "MUJI 聚酯纖維雙拉鍊袋（S/M）", "MUJI 聚酯纖維護照夾",
-            "KlassiC. 輕行者摺疊墨鏡", "Fjällräven Vidda Cap", "雨傘", "文具", "洗衣袋", "垃圾袋"
-          ]
-        },
-        {
-          title: "衣物・鞋類",
-          items: [
-            "貼身衣物（4 件）", "短褲（3 件）", "長褲（2 件）", "短袖（5 件）", "襪子（4 雙）",
-            "Nike Calm 拖鞋", "Nike Air Force 1", "真空壓縮袋", "MUJI 收納袋"
-          ]
-        },
-        {
-          title: "3C・攝影・充電",
-          items: [
-            "iPhone 15 Pro（開通 eSIM）", "AirPods Pro 3", "Apple Watch Ultra 3",
-            "Sony a7 V + 鏡頭組", "DJI Osmo Pocket 4", "Zendure 行動電源（10000mAh/36Wh）×2",
-            "IKEA 延長線", "各設備充電線"
-          ]
-        },
-        {
-          title: "嬰幼兒用品（Yuko / Yoki / 共用）",
-          items: [
-            "登機證、護照、健保卡、戶籍謄本影本", "尿布、衣物、奶瓶、圍兜",
-            "嬰兒推車、嬰兒揹帶", "BRAUN 耳溫槍", "出國常備用藥（咳嗽藥、希普利敏、退燒藥、止吐藥）"
-          ]
-        }
       ]
     },
     {
       id: "flight",
-      title: "航班預訂相關資料",
-      pdfPages: [44, 45, 46],
+      title: "航班資訊",
+      items: [
+        "去程：台中機場 13:10 起飛，抵達沖繩 15:45",
+        "回程：那霸機場 19:00 起飛返回台灣",
+        "建議 16:00 完成還車、17:00 抵達機場"
+      ],
       links: [
-        { label: "臺中國際機場", url: "https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E4%B8%AD%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4" },
-        { label: "那霸機場", url: "https://www.google.com/maps/search/?api=1&query=%E9%82%A3%E9%9C%B8%E6%A9%9F%E5%A0%B4" }
+        { label: "台中機場", url: "https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E4%B8%AD%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4", type: "maps" },
+        { label: "那霸機場", url: "https://maps.google.com/?q=Naha+Airport", type: "maps" }
       ]
     }
   ]
