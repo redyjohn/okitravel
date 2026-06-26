@@ -1,44 +1,61 @@
-# DAY1｜抵達沖繩 → 名護
+# ✈️ DAY1｜抵達沖繩 → 名護休息日
 
-## ⏰ 行程
+## 🕒 15:45｜抵達那霸機場
 
-15:45 抵達那霸機場  
-17:30 租車完成  
-18:30 出發名護  
-20:00 Check-in  
+📍 https://maps.google.com/?q=Naha+Airport
 
 ---
 
-## 📍地圖
+## 🕒 16:30–17:30｜租車＋分車
 
-- 那霸機場：https://maps.google.com/?q=Naha+Airport
-- 名護住宿：https://maps.google.com/?q=1220-25-5+Biimata+Nago+Okinawa
+🚗 4 台車編組完成
+
+- A車：導航
+- B車：嬰兒優先
+- C車：一般家庭
+- D車：補給車
 
 ---
 
-## 🍽 地陪私房推薦
+## 🕕 18:30｜前往名護
 
-### ⭐ 必吃美食
+🚗 車程：約 70–90 分鐘
 
-🥇 A&W 名護店  
-https://maps.google.com/?q=A%26W+Nago  
+---
+
+## 🕗 20:00｜飯店 Check-in
+
+📍 https://maps.google.com/?q=1220-25-5+Biimata+Nago+Okinawa
+
+---
+
+## 🍽 晚餐（2選1）
+
+### 🥇 A&W 名護店（推薦）
+
+📍 https://maps.google.com/?q=A%26W+Nago
+
 - 沖繩限定速食
-- 適合第一晚快速用餐
+- 出餐快、適合親子團
 
-🥈 yukino 食堂  
-https://maps.google.com/?q=Yukino+Shokudo+Nago  
-- 阿古豬定食
-- 家庭料理
+### 🥈 便利商店備案
 
----
-
-🍦 甜點
-- Lawson 冰品
-- 便利商店甜點
+Lawson / FamilyMart
 
 ---
 
-🛍 必買
-- Orion 啤酒
+## 🏆 地陪私房推薦
+
+### 🍔 必吃
+
+- A&W
+- Yukino 食堂（阿古豬定食）
+
+### 🍦 甜點
+
+- 便利商店冰品
+
+### 🛍 必買
+
+- Orion Beer
 - 沖繩泡麵
-- 零食補給

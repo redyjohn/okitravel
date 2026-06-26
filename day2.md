@@ -1,48 +1,71 @@
-# DAY2｜北部經典路線
+# 🐠 DAY2｜北部經典（美麗海＋古宇利）
 
-## ⏰ 行程
-
-09:30 出發  
-10:00 水族館  
-13:00 午餐  
-14:30 備瀨福木林道  
-16:00 古宇利島  
-18:30 回名護  
+## 🕘 09:30｜出發
 
 ---
 
-## 🐠 沖繩美麗海水族館
-https://maps.google.com/?q=Okinawa+Churaumi+Aquarium
+## 🕙 10:00｜沖繩美麗海水族館
+
+📍 https://maps.google.com/?q=Okinawa+Churaumi+Aquarium
+
+🅿️ P7 / P8 停車
+
+⏰ 停留：3 小時
 
 ---
 
-## 🍽 地陪私房推薦
+## 🕐 13:00｜午餐（2選1）
 
-### ⭐ 必吃美食
+### 🥇 Captain Kangaroo
 
-🥇 Captain Kangaroo  
-https://maps.google.com/?q=Captain+Kangaroo+Hamburger  
+📍 https://maps.google.com/?q=Captain+Kangaroo+Hamburger
+
 - 北部第一漢堡
 
-🥈 Shrimp Wagon（古宇利）  
-https://maps.google.com/?q=Shrimp+Wagon+Kouri  
-- 海景蝦蝦飯
+### 🥈 Jef（備案）
 
-🥉 Jef  
-https://maps.google.com/?q=Jef+Okinawa  
+📍 https://maps.google.com/?q=Jef+Okinawa
+
 - 苦瓜漢堡
 
 ---
 
-🍦 甜點
+## 🕑 14:30｜備瀨福木林道
 
-- 天知群水蜜桃冰  
-https://maps.google.com/?q=Amachika+Okinawa
+📍 https://maps.google.com/?q=Bise+Fukugi+Tree+Road
+
+⏰ 40–60 分鐘
 
 ---
 
-🛍 必買
+## 🕓 16:00｜古宇利島
 
-- 許田休息站  
-https://maps.google.com/?q=Kyoda+Michi-no-Eki  
-（黑糖 / 紫芋 / 雪鹽）
+📍 https://maps.google.com/?q=Kouri+Island
+
+**可選：**
+
+- 古宇利大橋
+- 海灘拍照
+
+---
+
+## 🕕 18:30｜回名護
+
+---
+
+## 🏆 地陪推薦
+
+### 🍔 必吃
+
+- Captain Kangaroo
+- Shrimp Wagon（蝦蝦飯）
+- Jef
+
+### 🍦 甜點
+
+- 天知群水蜜桃冰
+
+### 🛍 必買
+
+- 許田休息站
+- 黑糖 / 紫芋 / 雪鹽

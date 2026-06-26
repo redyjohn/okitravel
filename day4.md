@@ -1,23 +1,19 @@
-# DAY4｜國際通 → iias → 機場
+# 🏙 DAY4｜國際通 → iias → 回程
 
-## ⏰ 行程
-
-09:30 退房  
-10:20 國際通  
-13:00 午餐  
-14:20 iias  
-16:00 還車  
-19:00 回台灣  
+## 🕘 09:30｜退房
 
 ---
 
-## 🅿️ 停車場
+## 🕙 10:20｜國際通（核心行程）
 
+📍 https://maps.google.com/?q=Kokusai+Dori+Naha
+
+### 🅿️ 停車
+
+📍 みどり駐車場  
 https://maps.google.com/?q=みどり駐車場+那霸
 
----
-
-## 🚶 國際通動線
+### 🚶 動線
 
 - 平和通
 - 牧志市場
@@ -28,38 +24,50 @@ https://maps.google.com/?q=みどり駐車場+那霸
 
 ---
 
-## 🍽 地陪私房推薦
+## 🍽 午餐（2選1）
 
-### ⭐ 必吃美食
+### 🥇 Jack's Steak House
 
-🥇 Shimabuta（島豚屋）  
-https://maps.google.com/?q=Shimabuta+Naha  
-- 阿古豬火鍋
+📍 https://maps.google.com/?q=Jack's+Steak+House+Naha
 
-🥈 Eibe 沖繩麵  
-https://maps.google.com/?q=Eibe+Okinawa+Soba  
+### 🥈 Shimabuta（島豚屋）
 
-🥉 Jack's Steak House  
-https://maps.google.com/?q=Jack's+Steak+House+Naha  
+📍 https://maps.google.com/?q=Shimabuta+Naha
 
 ---
 
-🍦 甜點
+## 🕑 14:20｜iias Okinawa
 
-- 鹽屋冰淇淋  
-- Maxi 布丁  
+📍 https://maps.google.com/?q=iias+Okinawa+Toyosaki
+
+---
+
+## 🕓 16:00｜還車
+
+---
+
+## ✈️ 19:00｜返台
+
+---
+
+## 🏆 地陪推薦
+
+### 🍜 必吃
+
+- Shimabuta
+- Eibe 沖繩麵
+- Jack's Steak House
+- 屋台村
+
+### 🍦 甜點
+
+- 鹽屋冰淇淋
+- Maxi 布丁
 - 黑糖 en
 
----
-
-🛍 必買
+### 🛍 必買
 
 - Calbee Plus
 - 琉球牛乳餅
-- 南島糕點
+- 南島
 - 花生豆腐
-
----
-
-## 🛍 iias
-https://maps.google.com/?q=iias+Okinawa+Toyosaki
